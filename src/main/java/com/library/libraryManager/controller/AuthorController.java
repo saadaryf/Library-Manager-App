@@ -7,16 +7,19 @@ import com.library.libraryManager.model.Author;
 import com.library.libraryManager.response.AuthorResponse;
 import com.library.libraryManager.services.AuthorService;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+//import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
-
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.library.libraryManager.exceptions.errors.ErrorResponse;
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
@@ -30,13 +33,23 @@ public class AuthorController {
     private AuthorMapper authorMapper;
 
     @PostMapping("/save")
-    public ResponseEntity<String> create(@Valid @RequestBody AuthorRequest authorRequest){
+    public ResponseEntity<?> create(@Valid @RequestBody AuthorRequest authorRequest, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            String errorDetails=bindingResult.getFieldErrors()
+                    .stream()
+                    .map(fieldError -> fieldError.getField()+": "+fieldError.getDefaultMessage())
+                    .collect(Collectors.joining(", "));
+            ErrorResponse errorResponse=new ErrorResponse("Validation Failed",errorDetails);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+            }
 
          Author author=authorMapper.mapToEntity(authorRequest);
          authorService.createAuthor(author);
 
          return ResponseEntity.ok("Author Saved Successfully");
     }
+
+
 
     @GetMapping("/view")
     public List<AuthorResponse> viewAuthor(){
