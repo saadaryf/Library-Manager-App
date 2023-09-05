@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,7 +26,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Autowired
     BooksRepository booksRepository;
     @Override
-    public void createAuthor(Author author) {
+    public void createAuthor( Author author) {
         List<Books> books=author.getBookList().stream()
                 .map(booksDTO -> {Books books1 =new Books();
                     books1.setTitle(booksDTO.getTitle());
