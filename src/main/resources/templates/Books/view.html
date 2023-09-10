@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Author Table</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Author ID</th>
+        <!-- Add more columns if needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${booksResponses}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.year}"></td>
+        <td th:text="${book.authorID}"></td>
+        <!-- Add more columns if needed -->
+    </tr>
+    </tbody>
+</table>
+<a class="back-button" href="/">Back</a>
+</body>
+</html>

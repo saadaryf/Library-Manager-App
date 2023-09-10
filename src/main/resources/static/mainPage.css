@@ -1,0 +1,103 @@
+body {
+    background-image: url('bg.png');
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* Apply styles to the <ul> element within the <nav> */
+nav ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+/* Style <li> elements within the <ul> */
+nav ul li {
+    display: inline-block; /* Use inline-block to maintain inline flow with block-level styling */
+    margin-right: 10px;
+}
+
+/* Style <a> links within <li> elements */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Add hover effect for links */
+nav ul li a:hover {
+    text-decoration: underline; /* Underline links on hover */
+    /* You can also change color or add other effects as desired */
+}
+
+
+.main-section {
+    text-align: center;
+    padding: 60px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.option {
+    margin: 0 20px;
+}
+
+.option a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.option-image {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 90%;
+    margin-bottom: 10px;
+}
+
+.option-label {
+    background-color: brown;
+    display: block;
+}
+
+.sub-options {
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none; /* Start with display set to none */
+    animation: fadeIn 0.5s ease-in-out forwards; /* Use a fade-in animation */
+}
+
+.option:hover .sub-options {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Optional: Add a slight upward animation */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

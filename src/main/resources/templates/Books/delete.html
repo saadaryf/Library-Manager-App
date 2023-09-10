@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Delete Book</title>
+</head>
+<body>
+<form action="/books/delete" method="post" onsubmit="return confirm('Do you really want to delete?');">
+    <label for="bookId">Book ID:</label>
+    <input type="text" id="bookId" name="bookId" required>
+    <button type="submit">Delete Book</button>
+</form>
+<form method="get">
+    <button type="submit" formaction="/">Back</button>
+</form>
+</body>
+</html>

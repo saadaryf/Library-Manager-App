@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Author Table</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Author ID</th>
+    <th>Name</th>
+    <th>Nationality</th>
+    <!-- Add more columns if needed -->
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="authorResponse : ${authorResponses}">
+    <td th:text="${authorResponse.id}"></td>
+    <td th:text="${authorResponse.name}"></td>
+    <td th:text="${authorResponse.nationality}"></td>
+    <!-- Add more columns if needed -->
+  </tr>
+  </tbody>
+</table>
+<a class="back-button" href="/">Back</a>
+</body>
+</html>

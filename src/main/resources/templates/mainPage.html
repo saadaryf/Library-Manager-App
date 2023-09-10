@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Main Page</title>
+
+    <link rel="stylesheet" type="text/css" href="/mainPage.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About</a></li>
+            <!-- Add more common options here -->
+        </ul>
+    </nav>
+</header>
+
+<section class="main-section">
+    <h1>Welcome to the Library</h1>
+
+    <div class="options-container">
+        <div class="option">
+            <a href="#authors">
+                <div class="option-image" style="background-image: url('author.png');"></div>
+                <span class="option-label">Authors</span>
+            </a>
+            <div class="sub-options">
+                <a href="/author/view">View</a>
+                <a href="authorForm">Add</a>
+                <a href="/deleteAuthor">Delete</a>
+                <a href="/updateAuthor">Update</a>
+            </div>
+        </div>
+
+        <div class="option">
+            <a href="#books">
+                <div class="option-image" style="background-image: url('book.png');"></div>
+                <span class="option-label">Books</span>
+            </a>
+            <div class="sub-options">
+                <a href="/books/view">View</a>
+                <a href="booksForm">Add</a>
+                <a href="/deleteBook">Delete</a>
+                <a href="/updateBook">Update</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
