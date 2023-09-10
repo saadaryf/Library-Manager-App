@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,8 +25,8 @@ public class AuthorServiceImpl implements AuthorService {
     @Autowired
     BooksRepository booksRepository;
     @Override
-    public void createAuthor( Author author) {
-        List<Books> books=author.getBookList().stream()
+    public void createAuthor(Author author) {
+     /*   List<Books> books=author.getBookList().stream()
                 .map(booksDTO -> {Books books1 =new Books();
                     books1.setTitle(booksDTO.getTitle());
                     books1.setYear(booksDTO.getYear());
@@ -36,9 +35,10 @@ public class AuthorServiceImpl implements AuthorService {
                     return books1;
                 })
                 .collect(Collectors.toList());
-        Author savedAuthor =authorRepository.save(author);
+*/
+        authorRepository.save(author);
 
-        booksRepository.saveAll(books);
+     //   booksRepository.saveAll(books);
 
 
     }

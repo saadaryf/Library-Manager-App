@@ -16,5 +16,7 @@ public interface BooksService {
     @Transactional
     public Books updateBook(Books book);
     @Transactional
+    public Books getBookByID(Integer id);
+    @Transactional
     public void deleteBook(Integer id);
 }

@@ -46,12 +46,12 @@ public class AuthorMapper {
         author.setId(authorRequest.getId());
         author.setName(authorRequest.getName());
         author.setNationality(authorRequest.getNationality());
-        if(authorRequest.getBookList()!= null) {
+       /* if(authorRequest.getBookList()!= null) {
             List<Books> booksList = mapBooksToEntity(authorRequest.getBookList());
             author.setBookList(booksList);
         } else {
             author.setBookList(Collections.emptyList());
-        }
+        }*/
         return author;
     }
     private List<Books> mapBooksToEntity(List<BooksRequest> booksRequests){

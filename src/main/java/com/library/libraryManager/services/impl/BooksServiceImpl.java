@@ -60,6 +60,13 @@ public class BooksServiceImpl implements BooksService {
             return null;
         }
     }
+
+    @Override
+    public Books getBookByID(Integer id) {
+        Optional<Books> booksOptional=booksRepository.findById(id);
+        return booksOptional.orElse(null);
+    }
+
     @Override
     public void deleteBook(Integer id) {
         Optional<Books> foundBookOptional = booksRepository.findById(id);
