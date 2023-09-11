@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>All Authors</title>
+</head>
+<body>
+<h2>All Authors with Books</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Nationality</th>
+    <th>Books</th>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Year</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Iterate over the authorResponses list and display each author -->
+  <th:block th:each="authorResponse : ${authorResponses}">
+    <tr>
+      <td th:text="${authorResponse.id}"></td>
+      <td th:text="${authorResponse.name}"></td>
+      <td th:text="${authorResponse.nationality}"></td>
+      <td>
+        <table class="books-table">
+          <tbody>
+          <!-- Iterate over the bookList of each author and display each book -->
+          <th:block th:each="book : ${authorResponse.bookList}">
+            <tr>
+              <td th:text="${book.id}"></td>
+              <td th:text="${book.title}"></td>
+              <td th:text="${book.year}"></td>
+            </tr>
+          </th:block>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </th:block>
+  </tbody>
+</table>
+</body>
+</html>
