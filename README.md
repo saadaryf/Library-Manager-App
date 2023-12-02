@@ -3,6 +3,7 @@
 ## How to Run 
 - Clone Project in IntelliJ IDEA
 - Start Apache and MySQL from XAMPP
+- Create Database named 'library'
 - Run the project and visit localhost:8080
 
 ## Functionalities
@@ -19,5 +20,5 @@
 - Update Book Data
 
 ## Screenshots
-![ Screenshot1: Home Page ]('Screenshot.png');
-![ Screenshot2: All Authors and Books ]('Screenshot2.png');
+![ Screenshot1: Home Page ](Screenshot.png)
+![ Screenshot2: All Authors and Books ](Screenshot2.png)
